@@ -26,7 +26,7 @@ export default class ServiceOpenRouterIdentification {
     const port = window.location.port;
     const url = window.location.href; // ex: 'https://example.com/path?query=string'
     const callBackUrl_old = `${protocol}//${host}${port ? ':' + port : ''}/callback`;
-    const callBackUrl = `${url}callback//`;
+    const callBackUrl = `${window.location.href}callback`;
     console.log('Callback URL:', callBackUrl);
     authUrl.searchParams.set('callback_url', callBackUrl);
     authUrl.searchParams.set('response_type', 'code');

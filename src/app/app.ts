@@ -16,11 +16,11 @@ export class App {
 
   showParams() {
     const location = window.location;
-    console.log('Location:', location);
-    console.log('URL:', location.href);
-    console.log('Search Params:', location.search);
-    console.log('URL Parameters window:',window);
-    alert('URL: ' + location.href + '\n');
+    console.log('window.location:', location);
+    console.log('window.location.href', location.href);
+    console.log('window.location.search', location.search);
+    console.log('window',window);
+    alert('window.location.href: ' + window.location.href + '\n');
   }
 
 }
