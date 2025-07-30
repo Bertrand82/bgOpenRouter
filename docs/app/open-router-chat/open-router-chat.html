@@ -1,0 +1,8 @@
+<p>chat</p>
+<div *ngFor="let msg of history">
+      <strong>{{msg.role}}:</strong> {{msg.content}}
+    </div>
+    <input [(ngModel)]="prompt" placeholder="Votre message" />
+    <button (click)="send()">Envoyer</button>
+    <span>{{orService.selectedModel?.id}}</span>
+    <div>{{error}}</div>

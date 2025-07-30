@@ -2,8 +2,8 @@
 setlocal enabledelayedexpansion
 
 echo.
-echo  ng build github ===
-CALL ng build --output-path docsTemp --base-href /word-stuffing-brain/
+echo  ng build github base bgOpenRouter===
+CALL ng build --output-path docsTemp --base-href /bgOpenRouter/
 
 if %ERRORLEVEL% neq 0 (
     echo [ERREUR] ng build a échoué.
@@ -21,9 +21,7 @@ if %ERRORLEVEL% neq 0 (
 xcopy "src\*.html" "docs\" /S /E /H /R /K /C /Y /V /F
 xcopy "src\*.ico" "docs\" /S /E /H /R /K /C /Y /V /F
 xcopy "src\*.png" "docs\" /S /E /H /R /K /C /Y /V /F
-xcopy "src\*.html" "public\" /S /E /H /R /K /C /Y /V /F
-xcopy "src\*.ico" "public\" /S /E /H /R /K /C /Y /V /F
-xcopy "src\*.png" "public\" /S /E /H /R /K /C /Y /V /F
+
 if %ERRORLEVEL% neq 0 (
     echo [ERREUR] xcopy FILE a échoué.
     goto fin
@@ -37,12 +35,7 @@ if %ERRORLEVEL% neq 0 (
     goto fin
 )
 
-CALL xcopy "dist\words-english-brain-stuffing\browser" "public" /E /I /H /Y
-if %ERRORLEVEL% neq 0 (
-    echo [ERREUR] xcopy a échoué.
-    goto fin
-)
-echo.
+
 echo ===  git add . ===
 git add .
 if %ERRORLEVEL% neq 0 (
@@ -67,20 +60,10 @@ if %ERRORLEVEL% neq 0 (
 )
 
 echo.
-echo  firebase deploy ===
-CALL firebase deploy
-if %ERRORLEVEL% neq 0 (
-    echo [ERREUR] firebase deploy a échoué.
-    goto fin
-)
-
-echo.
-
-echo.
 echo === YES It is deployed   ===
 
 :fin
 endlocal
-echo https://memorybooster-8275c.web.app/home.html
-echo https://bertrand82.github.io/word-stuffing-brain/home.html
+
+echo https://bertrand82.github.io/bgopenrouter/home.html
 pause
