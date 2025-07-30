@@ -13,4 +13,16 @@ import { OpenRouterChat } from "./open-router-chat/open-router-chat";
 export class App {
 
   protected title = 'bgOpenRouter';
+
+  showParams() {
+    const location = window.location;
+    console.log('Location:', location);
+    console.log('URL:', location.href);
+    console.log('Search Params:', location.search);
+    console.log('URL Parameters window:',window);
+    alert('URL: ' + location.href + '\n');
+  }
+
 }
+
+
