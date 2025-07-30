@@ -32,16 +32,16 @@ interface ModelsResponse {
   providedIn: 'root'
 })
 export class OpenRouterService {
-  private baseUrl = 'https://openrouter.ai/api/v1';
+  private baseUrlOpenRouter = 'https://openrouter.ai/api/v1';
 
   constructor(private http: HttpClient) {}
 
   listModels(apiKey: string): Observable<OpenRouterModel[]> {
-    const headers = new HttpHeaders({
+     const headers = new HttpHeaders({
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     });
-    return this.http.get<ModelsResponse>(`${this.baseUrl}/models`, { headers })
+    return this.http.get<ModelsResponse>(`${this.baseUrlOpenRouter}/models`, { headers })
       .pipe(
         // map si nécessaire, par exemple map(res => res.data)
         map(res => res.data)

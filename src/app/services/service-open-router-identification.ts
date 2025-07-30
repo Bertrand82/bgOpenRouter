@@ -21,7 +21,12 @@ export default class ServiceOpenRouterIdentification {
     sessionStorage.setItem('pkce_code_verifier', this.codeVerifier);
 
     const authUrl = new URL('https://openrouter.ai/auth');
-    authUrl.searchParams.set('callback_url', 'http://localhost:4200/callback');
+    const protocol = window.location.protocol; // ex: 'https:'
+    const host = window.location.hostname;     // ex: 'example.com'
+    const port = window.location.port;
+    const callBackUrl = `${protocol}//${host}${port ? ':' + port : ''}/callback`;
+    console.log('Callback URL:', callBackUrl);
+    authUrl.searchParams.set('callback_url', callBackUrl);
     authUrl.searchParams.set('response_type', 'code');
     authUrl.searchParams.set('code_challenge', this.codeChallenge);
     authUrl.searchParams.set('code_challenge_method', 'S256');

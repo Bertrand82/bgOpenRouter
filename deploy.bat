@@ -65,5 +65,5 @@ echo === YES It is deployed   ===
 :fin
 endlocal
 
-echo https://bertrand82.github.io/bgopenrouter/home.html
+echo https://bertrand82.github.io/bgOpenRouter/home.html
 pause
