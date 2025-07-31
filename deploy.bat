@@ -18,13 +18,9 @@ if %ERRORLEVEL% neq 0 (
     goto fin
 )
 
-xcopy "src\home.html" "docs\" /S /E /H /R /K /C /Y /V /F
-xcopy "src\*.ico" "docs\" /S /E /H /R /K /C /Y /V /F
-xcopy "src\*.png" "docs\" /S /E /H /R /K /C /Y /V /F
 
-xcopy "src\*.html" "dist\bgOpenRouter\browser\" /S /E /H /R /K /C /Y /V /F
-xcopy "src\*.ico" "dist\bgOpenRouter\browser\" /S /E /H /R /K /C /Y /V /F
-xcopy "src\*.png" "dist\bgOpenRouter\browser\" /S /E /H /R /K /C /Y /V /F
+
+
 
 if %ERRORLEVEL% neq 0 (
     echo [ERREUR] xcopy FILE a échoué.
