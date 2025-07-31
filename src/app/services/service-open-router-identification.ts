@@ -13,6 +13,12 @@ export default class ServiceOpenRouterIdentification {
   codeChallenge: string  = 'no';
   hashBuffer: ArrayBuffer | null = null;
 
+  constructor() {
+    console.log('ServiceOpenRouterIdentification initialized');
+    this.apiKey = localStorage.getItem('apiKey') ?? 'no';
+    this.userId = localStorage.getItem('userId') ?? 'no';
+  }
+
   public async startAuth() {
     console.log('Starting authentication with OpenRouter');
     this.codeVerifier = generateCodeVerifier(64);
@@ -71,8 +77,6 @@ export async function  handleCallback(): Promise<any> {
     const params = new URLSearchParams(window.location.search);
     const code = params.get('code');
     const codeVerifier = sessionStorage.getItem('pkce_code_verifier') || '';
-    console.log('B Code from callback codeVerifier:', codeVerifier);
-    console.log('B Code from callback code:', code);
     // supprimer stockage pour sécurité
     //sessionStorage.removeItem('pkce_code_verifier');
 
@@ -91,20 +95,10 @@ export async function  handleCallback(): Promise<any> {
 
       console.log('B Response from OpenRouterA resp:', resp);
       const data = await resp.json();
-      console.log('B Response from OpenRouterB resp:', resp);
-      console.log('B Response from OpenRouterC data:', data);
-      console.log('B Response from OpenRouterC data.key:', data.key);
-      console.log('B Response from OpenRouterC data.user_id:', data.user_id);
       const apiKey = data.key; // clé API utilisateur
-      sessionStorage.setItem('apiKey', data.key); // stocker la clé API
-      sessionStorage.setItem('userId', data.user_id); // stocker l'ID utilisateur
       localStorage.setItem('apiKey', data.key); // stocker la clé API
       localStorage.setItem('userId', data.user_id); // stocker l'ID
-      console.log('B API Key stored in sessionStorage B:', data.key);
 
-      const userId = data.user_id; // ID utilisateur
-      sessionStorage.setItem('userId', data.user_id);
-      console.log('B User ID stored in sessionStorage:', data.user_id);
       return data; // clé API utilisateur
 
     }else {

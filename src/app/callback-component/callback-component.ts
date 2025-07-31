@@ -28,9 +28,7 @@ export class CallbackComponent implements OnInit {
     handleCallback()
       .then((data) => {
         this.ok=true;
-        console.log('X API data:', data);
-        console.log('X API data.key:', data.key);
-        console.log('X API data.user_id:', data.user_id);
+
 
 
         this.etat = 'Authentification OpenRouter réussie !';
