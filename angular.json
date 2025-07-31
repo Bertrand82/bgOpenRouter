@@ -18,7 +18,7 @@
             "assets": [
                 "src/favicon.ico",
                 "src/assets",
-                "src/home.html"
+                "src/home.html",
               {
                 "glob": "**/*",
                 "input": "public"
