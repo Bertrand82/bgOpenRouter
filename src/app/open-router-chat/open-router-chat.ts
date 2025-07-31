@@ -29,6 +29,12 @@ export class OpenRouterChat {
 
     const userMsg: ChatMessage = { role: 'user', content: this.prompt };
     this.history.push(userMsg);
+    if (!this.orService.selectedModel){
+      this.error = 'Aucun modèle sélectionné.';
+      console.log('Aucun modèle sélectionné, impossible d\'envoyer le message.');
+      alert('Aucun modèle sélectionné. Veuillez choisir un modèle avant d\'envoyer un message.');
+      return;
+    }
     var modelSelected:string = this.orService.selectedModel ? this.orService.selectedModel.id : 'openai/gpt-4o';
 
     const req: ChatRequest = {

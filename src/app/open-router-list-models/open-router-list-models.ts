@@ -36,7 +36,7 @@ export class OpenRouterListModels implements OnInit {
   ) {}
 
   ngOnInit() {
-    const apiKey = sessionStorage.getItem('apiKey') || 'no API Key';
+    const apiKey = localStorage.getItem('apiKey') || 'no API Key';
     this.orService.listModels(apiKey).subscribe({
       next: (data) => {
         this.models = data;

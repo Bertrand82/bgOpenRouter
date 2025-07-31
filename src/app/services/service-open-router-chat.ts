@@ -38,7 +38,7 @@ export class OpenrouterService {
   constructor(private http: HttpClient) {}
 
   chat(request: ChatRequest): Observable<ChatResponse> {
-    var key2 = sessionStorage.getItem('apiKey');
+    var key2 = localStorage.getItem('apiKey');
     if (key2) {
       this.apiKey = key2; // Utiliser la clé API stockée dans sessionStorage
     }
