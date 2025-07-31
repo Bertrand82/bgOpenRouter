@@ -1,161 +1,199 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>bg Open Router</title>
-  <style>
-    /* Reset de base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bg Open Router</title>
+    <style>
+      /* Reset de base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+      }
 
-    header {
-      background-color: #2c3e50;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
+      header {
+        background-color: #2c3e50;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+      }
 
-    header h1 {
-      font-size: 2rem;
-    }
+      header h1 {
+        font-size: 2rem;
+      }
 
-    nav {
-      background-color: #34495e;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 0.5rem;
-    }
-
-    nav a {
-      color: #ecf0f1;
-      text-decoration: none;
-      margin: 0.5rem 1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #1abc9c;
-      color: #fff;
-    }
-
-    main {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    footer {
-      background-color: #2c3e50;
-      color: #bdc3c7;
-      text-align: center;
-      padding: 1rem;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-    }
-
-	.bgComponent {
-         display: flex;                /* Active le modèle Flexbox */
-         flex-direction: column;          /* Aligne les éléments horizontalement row ou column */
-         justify-content: flex-start;      /* Centre les éléments horizontalement */
-         align-items: flex-start;          /* Centre les éléments verticalement : center ou left*/
-         border: 2px solid #ccc;       /* Bordure grise de 2px */
-         border-radius: 12px;          /* Coins arrondis de 12px */
-         margin: 20px;                 /* Marge extérieure de 20px */
-         padding: 16px;                /* Espacement intérieur de 16px */
-         background-color: #f9f9f9;    /* Couleur de fond claire */
-	}
-
-    /* Responsive */
-    @media (max-width: 600px) {
       nav {
-        flex-direction: column;
-        align-items: center;
+        background-color: #34495e;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0.5rem;
       }
 
       nav a {
-        margin: 0.5rem 0;
+        color: #ecf0f1;
+        text-decoration: none;
+        margin: 0.5rem 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
       }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>bg Open Router</h1>
-  </header>
 
-  <nav>
-    <a href="https://bertrand82.github.io/bgOpenRouter/" target="_blank">bgOpenRouter GitHub</a>
-    <a href="https://bgopenrouter.web.app/" target="_blank">bgOpenRouter Firebase</a>
-  </nav>
+      nav a:hover {
+        background-color: #1abc9c;
+        color: #fff;
+      }
 
-  <main>
-    <!-- Contenu principal -->
+      main {
+        padding: 2rem;
+        text-align: center;
+      }
 
+      footer {
+        background-color: #2c3e50;
+        color: #bdc3c7;
+        text-align: center;
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
 
+      .bgComponent {
+        display: flex; /* Active le modèle Flexbox */
+        flex-direction: column; /* Aligne les éléments horizontalement row ou column */
+        justify-content: flex-start; /* Centre les éléments horizontalement */
+        align-items: flex-start; /* Centre les éléments verticalement : center ou left*/
+        border: 2px solid #ccc; /* Bordure grise de 2px */
+        border-radius: 12px; /* Coins arrondis de 12px */
+        margin: 20px; /* Marge extérieure de 20px */
+        padding: 16px; /* Espacement intérieur de 16px */
+        background-color: #f9f9f9; /* Couleur de fond claire */
+      }
 
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Alignement vertical (axe principal) */
+        align-items: flex-start; /* Alignement horizontal (axe secondaire) */
+        margin: 0;
+        padding: 0;
+      }
+      ul li {
+        /* style des éléments */
+      }
 
-  <div class="bgComponent">
-    <h2>To do</h2>
-	<ol>
-		<li>Une saisie manuelle de la key api open router. Nécessaire sur hébergement github </li>
-	</ol>
+      /* Responsive */
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          align-items: center;
+        }
 
-</div>
-  <div class="bgComponent">
-  <h2>404 Causes possibles et solutions</h2>
-  Si vous avez restreint les fournisseurs autorisés dans vos paramètres OpenRouter, cela peut entraîner une erreur 404 si aucun fournisseur disponible ne correspond à votre demande. Pour résoudre ce problème :
-<ol>
- <li>Accédez à vos paramètres sur OpenRouter.<a href="https://openrouter.ai/settings/preferences">preferences </a>dans la section "Allowed Providers", autoriser le provider voulu.
- </li>
- <li>Faites défiler jusqu'à la section des fournisseurs.
- </li>
- <li>Débloquez les fournisseurs ignorés et effacez les restrictions sur les fournisseurs autorisés.
- </li>
- <li>Enregistrez les modifications.
- </li>
-</ol>
-  </div>
-<div class="bgComponent">
- <h2>403 Causes possibles et solutions</h2> L'erreur que vous rencontrez, « Http failure response for https://openrouter.ai/api/v1/chat/completions: 403 OK », indique que le serveur a compris votre requête mais refuse de l'autoriser. Voici les causes possibles et les solutions correspondantes :
+        nav a {
+          margin: 0.5rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>bg Open Router</h1>
+    </header>
 
-<ul>
-<li>Modèle nécessitant une clé API spécifique:Cause : Certains modèles, comme o3, requièrent l'utilisation de votre propre clé API OpenAI.</li>
-<li>Clé API invalide ou expirée</li>
-<li>Quota de crédits dépassé</li>
-<li>Restrictions géographiques :  L'accès à certains modèles ou services est restreint dans certaines régions.</li>
-<li>Modération de contenu Cause : Votre message a été signalé par le système de modération d'OpenRouter.</li>
+    <nav>
+      <a href="https://bertrand82.github.io/bgOpenRouter/" target="_blank"
+        >bgOpenRouter GitHub</a
+      >
+      <a href="https://bgopenrouter.web.app/" target="_blank"
+        >bgOpenRouter Firebase</a
+      >
+    </nav>
 
-</ul>
-</div>
-<div class="bgComponent">
-    <h2>404 sur recherche de clé sur github</h2>
-	L'hébergement github ne permet pas les callback.
+    <main>
+      <!-- Contenu principal -->
 
-</div>
-</main>
-  <nav>
-    <a href="home.html">Home</a>
-    <a href="https://memorybooster-8275c.web.app/" target="_blank">Word Stuffing Firebase</a>
-    <a href="https://bertrand82.github.io/word-stuffing-brain/" target="_blank">Word Stuffing GitHub</a>
-    <a href="http://localhost:4200/" target="_blank">App Localhost:4200</a>
-    <a href="index.html">index.html</a>
-  </nav>
-  <footer>
-     2025 b guiral
-  </footer>
-</body>
+      <div class="bgComponent">
+        <h2>To do</h2>
+        <ol>
+          <li>
+            Une saisie manuelle de la key api open router. Nécessaire sur
+            hébergement github
+          </li>
+        </ol>
+      </div>
+      <div class="bgComponent">
+        <h2>404 Causes possibles et solutions</h2>
+        Si vous avez restreint les fournisseurs autorisés dans vos paramètres
+        OpenRouter, cela peut entraîner une erreur 404 si aucun fournisseur
+        disponible ne correspond à votre demande. Pour résoudre ce problème :
+        <ol>
+          <li>
+            Accédez à vos paramètres sur OpenRouter.<a
+              href="https://openrouter.ai/settings/preferences"
+              >preferences </a
+            >dans la section "Allowed Providers", autoriser le provider voulu.
+          </li>
+          <li>Faites défiler jusqu'à la section des fournisseurs.</li>
+          <li>
+            Débloquez les fournisseurs ignorés et effacez les restrictions sur
+            les fournisseurs autorisés.
+          </li>
+          <li>Enregistrez les modifications.</li>
+        </ol>
+      </div>
+      <div class="bgComponent">
+        <h2>403 Causes possibles et solutions</h2>
+        L'erreur que vous rencontrez, « Http failure response for
+        https://openrouter.ai/api/v1/chat/completions: 403 OK », indique que le
+        serveur a compris votre requête mais refuse de l'autoriser. Voici les
+        causes possibles et les solutions correspondantes :
+
+        <ul>
+          <li>
+            Modèle nécessitant une clé API spécifique:Cause : Certains modèles,
+            comme o3, requièrent l'utilisation de votre propre clé API OpenAI.
+          </li>
+          <li>Clé API invalide ou expirée</li>
+          <li>Quota de crédits dépassé</li>
+          <li>
+            Restrictions géographiques : L'accès à certains modèles ou services
+            est restreint dans certaines régions.
+          </li>
+          <li>
+            Modération de contenu Cause : Votre message a été signalé par le
+            système de modération d'OpenRouter.
+          </li>
+        </ul>
+      </div>
+      <div class="bgComponent">
+        <h2>404 sur recherche de clé sur github</h2>
+        L'hébergement github ne permet pas les callback. La recherche de la clé
+        API OpenRouter ne peut pas se faire. Il faudrait saisir la clé
+        manuellement dans le champ prévu à cet effet.
+      </div>
+    </main>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="https://memorybooster-8275c.web.app/" target="_blank"
+        >Word Stuffing Firebase</a
+      >
+      <a
+        href="https://bertrand82.github.io/word-stuffing-brain/"
+        target="_blank"
+        >Word Stuffing GitHub</a
+      >
+      <a href="http://localhost:4200/" target="_blank">App Localhost:4200</a>
+      <a href="index.html">index.html</a>
+    </nav>
+    <footer>2025 b guiral</footer>
+  </body>
 </html>
