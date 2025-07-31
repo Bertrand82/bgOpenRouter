@@ -9,7 +9,6 @@
       <ul>
         <li *ngFor="let m of filteredModels">
           <button (click)="showDetail(m)">Détails</button>
-          <button (click)="sendTestRequest(m)">test</button>
           <button (click)="select(m)">select</button>
           <strong>{{ m.id }}</strong>
 

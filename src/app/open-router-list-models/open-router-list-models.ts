@@ -76,9 +76,6 @@ export class OpenRouterListModels implements OnInit {
     );
   }
 
-  sendTestRequest(_t23: OpenRouterModel) {
-    console.log('Envoi de la requête de test pour le modèle:', _t23);
-  }
 
   select(m: OpenRouterModel) {
     console.log('Model selected:', m);
