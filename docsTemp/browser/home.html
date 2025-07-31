@@ -66,6 +66,18 @@
       width: 100%;
       bottom: 0;
     }
+	
+	.bgComponent {
+         display: flex;                /* Active le modèle Flexbox */
+         flex-direction: row;          /* Aligne les éléments horizontalement */
+         justify-content: left;      /* Centre les éléments horizontalement */
+         align-items: center;          /* Centre les éléments verticalement */
+         border: 2px solid #ccc;       /* Bordure grise de 2px */
+         border-radius: 12px;          /* Coins arrondis de 12px */
+         margin: 20px;                 /* Marge extérieure de 20px */
+         padding: 16px;                /* Espacement intérieur de 16px */
+         background-color: #f9f9f9;    /* Couleur de fond claire */
+	}
 
     /* Responsive */
     @media (max-width: 600px) {
@@ -101,9 +113,48 @@
     <a href="http://localhost:4200/" target="_blank">App Localhost:4200</a>
     <a href="index.html">index.html</a>
   </nav>
+  
+  <div class="bgComponent">
+    <h2>To do</h2>
+	<ul>
+		<li>Une saisie manuelle de la key . Nécessaire sur hébergement github </li>
+	</ul>
+	
+</div>
+  <div class="bgComponent">
+  <h2>404 Causes possibles et solutions<h2>Si vous avez restreint les fournisseurs autorisés dans vos paramètres OpenRouter, cela peut entraîner une erreur 404 si aucun fournisseur disponible ne correspond à votre demande. Pour résoudre ce problème :
+<ol>
+ <li>Accédez à vos paramètres sur OpenRouter.<a href="https://openrouter.ai/settings/preferences">preferences </a>dans la section "Allowed Providers", autoriser le provider voulu.
+ </li>
+ <li>Faites défiler jusqu'à la section des fournisseurs.
+ </li>
+ <li>Débloquez les fournisseurs ignorés et effacez les restrictions sur les fournisseurs autorisés.
+ </li>
+ <li>Enregistrez les modifications.
+ </li>
+</ol>
+  </div>
+<div class="bgComponent">
+ <h2>403 Causes possibles et solutions</h2> L'erreur que vous rencontrez, « Http failure response for https://openrouter.ai/api/v1/chat/completions: 403 OK », indique que le serveur a compris votre requête mais refuse de l'autoriser. Voici les causes possibles et les solutions correspondantes :
+
+<ul>
+<li>Modèle nécessitant une clé API spécifique:Cause : Certains modèles, comme o3, requièrent l'utilisation de votre propre clé API OpenAI.</li>
+<li>Clé API invalide ou expirée</li>
+<li>Quota de crédits dépassé</li>
+<li>Restrictions géographiques :  L'accès à certains modèles ou services est restreint dans certaines régions.</li>
+<li>Modération de contenu Cause : Votre message a été signalé par le système de modération d'OpenRouter.</li>
+
+</ul>
+</div>
+<div class="bgComponent">
+    <h2>404 sur recherche de clé sur github</h2>
+	L'hébergement github ne permet pas les callback.
+	
+</div>
+
 
   <footer>
-     2025 bg Open Router
+     2025 b guiral
   </footer>
 </body>
 </html>
