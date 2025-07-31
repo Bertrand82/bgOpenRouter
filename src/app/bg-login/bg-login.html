@@ -2,9 +2,13 @@
 
 <div>apiKey :{{apiKey}}</div>
 <div>userId :{{userId}}</div>
-<button (click)="login2()">Fetch key OpenRouter</button>
+<button (click)="fetchKeyOnOpenServeur()">Fetch key OpenRouter</button>
 <div>
-<button (click)="displayKeyAndUserId()">Display OpenRouter userId et apiKey</button>
+<input type="text" [(ngModel)]="apiKeyManuel" placeholder="Enter API Key">
 
+<button (click)="saveKeyManual()">Save Key</button>
+</div>
+<div>
+<button (click)="displayKeyAndUserId()">Display OpenRouter userId et apiKey from localStore</button>
 </div>
 
