@@ -58,7 +58,12 @@ if %ERRORLEVEL% neq 0 (
     echo [ERREUR] git push a échoué.
     goto fin
 )
-
+ng build
+firebase deploy --only hosting
+if %ERRORLEVEL% neq 0 (
+    echo [ERREUR] firebase a échoué.
+    goto fin
+)
 echo.
 echo === YES It is deployed   ===
 

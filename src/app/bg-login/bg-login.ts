@@ -38,22 +38,6 @@ export class BgLogin {
 
 
 
-  protected handleCallBackManual() {
-    console.log('Handling callback');
-    handleCallback()
-      .then((apiKey) => {
-        console.log('API Key A:', apiKey);
-
-      sessionStorage.setItem('apiKey', apiKey); // stocker la clé API
-
-      console.log('API Key stored in sessionStorage  A:', this.apiKey);
-
-      })
-      .catch((error) => {
-        console.error('Error handling callback:', error);
-
-      });
-  }
 
 
 } /////////////////////////////////////////////////////////////
