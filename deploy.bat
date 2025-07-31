@@ -66,9 +66,11 @@ if %ERRORLEVEL% neq 0 (
 )
 echo.
 echo === YES It is deployed   ===
-
+goto end
 :fin
+echo WARNING !!!! deply n'est pas arrivé à la fin
 endlocal
-
+:end
+echo https://bgopenrouter.web.app/
 echo https://bertrand82.github.io/bgOpenRouter/home.html
 pause
