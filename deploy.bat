@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 echo.
 echo  ng build github base bgOpenRouter===
 CALL ng build --output-path docsTemp --base-href /bgOpenRouter/
-
+CALL ng build
 if %ERRORLEVEL% neq 0 (
     echo [ERREUR] ng build a échoué.
     goto fin
@@ -21,6 +21,10 @@ if %ERRORLEVEL% neq 0 (
 xcopy "src\*.html" "docs\" /S /E /H /R /K /C /Y /V /F
 xcopy "src\*.ico" "docs\" /S /E /H /R /K /C /Y /V /F
 xcopy "src\*.png" "docs\" /S /E /H /R /K /C /Y /V /F
+
+xcopy "src\*.html" "dist\bgOpenRouter\browser\" /S /E /H /R /K /C /Y /V /F
+xcopy "src\*.ico" "dist\bgOpenRouter\browser\" /S /E /H /R /K /C /Y /V /F
+xcopy "src\*.png" "dist\bgOpenRouter\browser\" /S /E /H /R /K /C /Y /V /F
 
 if %ERRORLEVEL% neq 0 (
     echo [ERREUR] xcopy FILE a échoué.
@@ -58,7 +62,7 @@ if %ERRORLEVEL% neq 0 (
     echo [ERREUR] git push a échoué.
     goto fin
 )
-CALL ng build
+
 CALL firebase deploy --only hosting
 if %ERRORLEVEL% neq 0 (
     echo [ERREUR] firebase a échoué.
