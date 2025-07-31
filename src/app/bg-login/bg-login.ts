@@ -24,8 +24,8 @@ export class BgLogin {
   }
 
   displayKeyAndUserId() {
-  this.apiKey = sessionStorage.getItem('apiKey') || 'no API Key';
-  this.userId = sessionStorage.getItem('userId') || 'no User ID';
+  this.apiKey = localStorage.getItem('apiKey') || 'no API Key';
+  this.userId = localStorage.getItem('userId') || 'no User ID';
     console.log('API Key:', this.apiKey);
     console.log('User ID:', this.userId);
 }

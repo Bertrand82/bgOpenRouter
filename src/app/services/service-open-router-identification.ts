@@ -98,6 +98,8 @@ export async function  handleCallback(): Promise<any> {
       const apiKey = data.key; // clé API utilisateur
       sessionStorage.setItem('apiKey', data.key); // stocker la clé API
       sessionStorage.setItem('userId', data.user_id); // stocker l'ID utilisateur
+      localStorage.setItem('apiKey', data.key); // stocker la clé API
+      localStorage.setItem('userId', data.user_id); // stocker l'ID
       console.log('B API Key stored in sessionStorage B:', data.key);
 
       const userId = data.user_id; // ID utilisateur
