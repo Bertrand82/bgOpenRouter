@@ -5,15 +5,22 @@
   <div class="content">
     <div class="left-side">
       <h1> {{ title }}</h1>
-      <a href ="home.html">Home</a>
-      <app-bg-login></app-bg-login>
-      <app-open-router-chat></app-open-router-chat>
+      <div class="bgComponent">
+        <app-bg-login></app-bg-login>
+      </div>
 
-      <app-open-router-list-models></app-open-router-list-models>
+      <div class="bgComponent">
+        <app-open-router-chat></app-open-router-chat>
+      </div>
+
+      <div class="bgComponent">
+        <app-open-router-list-models></app-open-router-list-models>
+      </div>
 
 
     </div>
      <div class="right-side">
+       <a href ="home.html">Home</a>
     </div>
   </div>
 </main>

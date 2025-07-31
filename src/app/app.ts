@@ -14,14 +14,6 @@ export class App {
 
   protected title = 'bgOpenRouter';
 
-  showParams() {
-    const location = window.location;
-    console.log('window.location:', location);
-    console.log('window.location.href', location.href);
-    console.log('window.location.search', location.search);
-    console.log('window',window);
-    alert('window.location.href: ' + window.location.href + '\n');
-  }
 
 }
 
