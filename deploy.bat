@@ -18,7 +18,7 @@ if %ERRORLEVEL% neq 0 (
     goto fin
 )
 
-xcopy "src\*.html" "docs\" /S /E /H /R /K /C /Y /V /F
+xcopy "src\home.html" "docs\" /S /E /H /R /K /C /Y /V /F
 xcopy "src\*.ico" "docs\" /S /E /H /R /K /C /Y /V /F
 xcopy "src\*.png" "docs\" /S /E /H /R /K /C /Y /V /F
 
