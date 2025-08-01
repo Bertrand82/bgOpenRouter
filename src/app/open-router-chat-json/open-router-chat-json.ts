@@ -15,7 +15,8 @@ import { NgxJsonViewerModule } from 'ngx-json-viewer';
 export class OpenRouterChatJson {
 
   userInput = '';
-  responseJson: any;
+  systemContent = 'Tu es un expert technique';
+  responseJson: any={};
   processing:boolean=false;
 
   constructor( private openrouter : ServiceOpenRouterChatJson,protected orService: OpenRouterService,private cdr: ChangeDetectorRef)  {
@@ -35,7 +36,7 @@ export class OpenRouterChatJson {
 
     this.openrouter.sendRequest({
       model: modelSelected,
-      messages: [{ role: 'user', content: this.userInput }],
+      messages: [{ role: 'user', content: this.userInput },{role: "system", content: this.systemContent}],
       response_format: {
         type: 'json_schema',
         json_schema: schemaResponse
@@ -82,35 +83,4 @@ const schemaResponse = {
     additionalProperties: false
   }
 };
-const schemaResponse_OLD
-     = {
-      name: 'responseComplexe',
-      strict: true,
-      schema: {
-        type: 'object',
-        properties: {
-          promptEquivalent: { type: 'string' , description: 'prompt equivalent in the request' },
-          promptPossible: { type: 'string' , description: 'prompt possible ayant un sens voisin' },
-          promptSuivant: { type: 'string' , description: 'prompt suivant  ' },
-          reponse: { type: 'string' , description:"reponse au prompt" },
 
-        },
-          promptSuivant: { type: 'string' , description: 'prompt suivant  ' },
-        required: ['promptEquivalent', 'promptPossible', 'promptSuivant', 'reponse'],
-        additionalProperties: true
-      }
-    };
-
-export const responseShemaCheckSentence___OLD = {
-  "type": "object",
-  "properties": {
-    "isOK": { "type": "boolean" },
-    "isMakeSens": { "type": "boolean" },
-    "isFamiliar": { "type": "boolean" },
-    "numberOfFaults": { "type": "number" },
-    "corrected": { "type": "string" , "description": "Corrected version of the sentence if it was not OK." },
-    "otherCorrectProposition": { "type": "string" }
-  },
-  "required": ["isOK", "isMakeSens", "isFamiliar", "corrected", "numberOfFaults"],
-  "propertyOrdering": ["isOK", "isMakeSens", "isFamiliar", "corrected", "otherCorrectProposition"]
-};

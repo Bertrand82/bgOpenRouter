@@ -1,8 +1,8 @@
-<p>chat</p>
+<p><strong>chat :</strong> <span>{{orService.selectedModel?.id}}</span></p>
 <div *ngFor="let msg of history">
-      <strong>{{msg.role}}:</strong> {{msg.content}}
+    <strong>{{msg.role}}:</strong> {{msg.content}}
     </div>
     <input [(ngModel)]="prompt" placeholder="Votre message" />
     <button (click)="send()">Envoyer</button>
-    <span>{{orService.selectedModel?.id}}</span>
+
     <div>{{error}}</div>
