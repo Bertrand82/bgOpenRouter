@@ -31,6 +31,7 @@ apiKeyManuel: any;
   displayKeyAndUserId() {
   this.apiKey = localStorage.getItem('apiKey') || 'no API Key';
   this.userId = localStorage.getItem('userId') || 'no User ID';
+  this.apiKeyManuel = this.apiKey;
     console.log('API Key:', this.apiKey);
     console.log('User ID:', this.userId);
 }

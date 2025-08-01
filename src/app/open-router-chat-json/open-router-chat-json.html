@@ -1,0 +1,7 @@
+<p>chat avec json request</p>
+<span>{{orService.selectedModel?.id}}</span>
+
+<ngx-json-viewer [json]="responseJson" [expanded]="true" [depth]="3"></ngx-json-viewer>
+ <textarea [(ngModel)]="userInput"></textarea>
+    <button (click)="ask()" [disabled]="processing">Envoyer</button>
+

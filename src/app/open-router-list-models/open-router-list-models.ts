@@ -28,7 +28,7 @@ export class OpenRouterListModels implements OnInit {
     'cohere',
     'all',
   ];
-  selectedProvider: string = 'google';
+  selectedProvider: string = localStorage.getItem('selectedProvider') || 'google';
 
   constructor(
     private orService: OpenRouterService,
@@ -42,6 +42,8 @@ export class OpenRouterListModels implements OnInit {
         this.models = data;
         this.applyFilter(); // Initialiser les modèles filtrés avec tous les modèles
         console.log('Modèles récupérés', this.models);
+        this.getModelSelectedFromLocalStore()
+
         this.cdr.detectChanges(); // Force la détection des changements
       },
       error: (err) => {
@@ -49,6 +51,25 @@ export class OpenRouterListModels implements OnInit {
         this.cdr.detectChanges();
       },
     });
+  }
+  getModelSelectedFromLocalStore() {
+        const selectedModelId =    localStorage.getItem('selectedModelId');
+        if (selectedModelId) {
+          const selectedModel = this.models.find(
+            (m) => m.id === selectedModelId
+          );
+          console.log('Selected model from local storage:', selectedModel);
+
+
+          if (selectedModel) {
+            this.selectModel(selectedModel);
+            console.log('Modèle sélectionné:', selectedModel);
+          } else {
+            console.warn('Modèle sélectionné non trouvé dans la liste');
+          }
+        } else {
+          console.warn('Aucun modèle sélectionné trouvé dans le stockage local');
+        }
   }
 
   applyFilter(): void {
@@ -77,8 +98,10 @@ export class OpenRouterListModels implements OnInit {
   }
 
 
-  select(m: OpenRouterModel) {
+  selectModel(m: OpenRouterModel) {
     console.log('Model selected:', m);
     this.orService.selectedModel = m;
+    localStorage.setItem('selectedProvider', this.selectedProvider);
+    localStorage.setItem('selectedModelId', m.id);
   }
 }

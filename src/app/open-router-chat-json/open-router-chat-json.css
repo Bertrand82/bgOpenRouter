@@ -1,0 +1,7 @@
+::ng-deep .ngx-json-viewer .segment-value.segment-type-string {
+  white-space: pre-wrap !important;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+
